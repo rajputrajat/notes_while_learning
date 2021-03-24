@@ -9,16 +9,16 @@ going through following video:
 
 ## advantages of WebGPU over WebGL
 
-. better cpu performance
-. access to GPU compute functionality
-. factors cost at loading time -> better cpu perf
-. views the GPU as commands
-. in Scene Graph, divide nodes in static and dynamic nodes
-. allow reused of commands. create bundles
-. precompute static commands for bundle
-. use that precompute bundle later -> no computation needed at draw in this way
-. babylon js demonstation show almost negligble usage of cpu compared to WebGL
-. efficient with compute shaders
+* better cpu performance
+* access to GPU compute functionality
+* factors cost at loading time -> better cpu perf
+* views the GPU as commands
+* in Scene Graph, divide nodes in static and dynamic nodes
+* allow reused of commands. create bundles
+* precompute static commands for bundle
+* use that precompute bundle later -> no computation needed at draw in this way
+* babylon js demonstation show almost negligble usage of cpu compared to WebGL
+* efficient with compute shaders
 
 ### implementation for WebGPU
 
