@@ -67,6 +67,46 @@
   the load address of KERNEL32 in memory.
   Likewise, the .data section is at file offset 0x74C00 and will be 0x76000 bytes above
   KERNEL32's load address in memory.
+* Linker can be asked to merge 2 sections which have compatible attributes, into one.
+  this is done via the linker '/merge' switch.
+  to combine .text and .rdata => `MERGE:.rdata=.text`
+  this can save a 'page' when PE file loaded in memory
+* shouldn't merge - .rsrc, .reloc or .pdata into other sections
+  prior to .NET .idata could be merged into other sections, but not anymore
+  but linker ofter merges parts of .idata into other sections, such as .rdata,
+  when doing a relaese build
+* Windows Loader writes to portions of 'imports data' when these are loaded, even though these are 
+  read-only section. because system can temperarily set the attributes to rw. once initilization is
+  done, these are set back to their original attributes
+
+### Relative Virtual Addresses
+
+* RVA = target address - load address (HMODULE)
+* call GetModuleHandle with the name of DLL
+
+### The Data Directory
+
+* directory to quickly locate data structures such as imports, exports, resources
+  and base relocations
+* these are found in consistent manner and the locations is known as the DataDirectory
+* is an array of 16 structures
+* indexes are IMAGE_DIRECTORY_ENTRY_XXX (0 to 15)
+
+### Importing Functions
+
+* when importing a DLL, Windows Loader locates all the imported functions and data and make those
+  available to your code.
+* implicit linking and explicit linking
+* delayload feature (Visual C++ 6.0) hybrid linking
+* In PE file, there's is an array of data structures, one per imported DLL.
+  each structure has name of imported DLL and pointer to IAT
+* Import Address Table (IAT) - each entry is a pointer to imported function
+
+### PE File Structure
+
+* defined in WINNT.H
+
+#### The MS-DOS header
 
 
 
