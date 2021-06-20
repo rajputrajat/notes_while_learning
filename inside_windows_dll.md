@@ -106,7 +106,15 @@
 
 * defined in WINNT.H
 
-#### The MS-DOS header
+#### The MS-DOS header (IMAGE_DOC_HEADER)
 
+* every PE file begins with a small MS-DOS executable
+* it was needed earlier, to echo the DOS computers then that this is meant for Windows
+* important values - e_magic, e_lfanew
+    a. e_lfanew: contains the file offset of PE header
+    b. e_magic: value 0x5A4D => IMAGE_DOS_SIGNATURE => ascii - MZ (Mark Zbikowski)
 
+#### The IMAGE_NT_HEADERS Header
+
+*
 
