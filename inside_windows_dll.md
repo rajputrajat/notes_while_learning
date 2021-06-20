@@ -63,6 +63,10 @@
     02 .data
     VirtSize: 000028CA VirtAddr: 00076000 raw data offs: 00074C00 raw data size: 00002400
   ```
-* The .text section is at offset 0x400 in the PE file and will be 0x1000 bytes above the load address of KERNEL32 in memory. Likewise, the .data section is at file offset 0x74C00 and will be 0x76000 bytes above KERNEL32's load address in memory.
+* The .text section is at offset 0x400 in the PE file and will be 0x1000 bytes above
+  the load address of KERNEL32 in memory.
+  Likewise, the .data section is at file offset 0x74C00 and will be 0x76000 bytes above
+  KERNEL32's load address in memory.
+
 
 
